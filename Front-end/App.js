@@ -1,10 +1,15 @@
-import React from 'react'
-import AppNavigation from './navigation/AppNavigation'
+import React from 'react';
+import { AppRegistry } from 'react-native';
+import AppNavigation from './navigation/AppNavigation';
+
 
 const App = () => {
   return (
-    <AppNavigation/>
-  )
-}
+    <AppNavigation />
+  );
+};
 
-export default App 
+
+
+export default App;
+
