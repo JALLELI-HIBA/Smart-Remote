@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { View, StyleSheet, Text, Dimensions, Animated, Easing } from 'react-native';
+import { View, StyleSheet, Text, Animated, Easing } from 'react-native';
+import { hp, wp } from 'react-native-responsive-screen';
 import Background from './Background';
 import Btn from './Btn';
 import { darkGreen } from './Constants';
-
-const { width, height } = Dimensions.get('window');
 
 const Home = (props) => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -15,13 +14,12 @@ const Home = (props) => {
       fadeAnim,
       {
         toValue: 1,
-        duration: 2000, // Adjust the duration as needed
+        duration: 2000,
         easing: Easing.linear,
         useNativeDriver: true
       }
     ).start();
     
-    // Move the text up and down continuously
     Animated.loop(
       Animated.sequence([
         Animated.timing(
@@ -49,7 +47,9 @@ const Home = (props) => {
   return (
     <Background>
       <View style={styles.container}>
-        <Animated.Text style={[styles.header, styles.marginBottom, { opacity: fadeAnim, transform: [{ translateY: translateYAnim }] }]}>Welcome</Animated.Text>
+        <Animated.Text style={[styles.header, styles.marginBottom, { opacity: fadeAnim, transform: [{ translateY: translateYAnim }] }]}>
+          Welcome
+        </Animated.Text>
         <Btn bgColor={darkGreen} textColor='white' btnLabel="SignIn" Press={() => props.navigation.navigate("SignIn")} />
         <Btn bgColor='white' textColor={darkGreen} btnLabel="Signup" Press={() => props.navigation.navigate("Signup")} />
       </View>
@@ -59,23 +59,22 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: width * 0.1, // 10% of screen width
-    marginVertical: height * 0.1, // 10% of screen height
-    marginLeft: 25
+    marginHorizontal: wp('10%'),
+    marginVertical: hp('10%'),
   },
   header: {
     color: 'white',
-    fontSize: width * 0.1,
+    fontSize: hp('5%'),
     textAlign: 'center',
-    marginTop: 70,
-    marginBottom: 10,
+    marginTop: hp('10%'),
+    marginBottom: hp('1%'),
     fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: { width: -1, height: 1 },
-    textShadowRadius: 10
+    textShadowOffset: { width: wp('-0.25%'), height: hp('0.1%') },
+    textShadowRadius: hp('1%')
   },
   marginBottom: {
-    marginBottom: height * 0.05, // Dynamic bottom margin based on screen height
+    marginBottom: hp('5%'),
   },
 });
 
