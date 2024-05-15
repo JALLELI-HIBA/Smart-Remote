@@ -18,7 +18,7 @@ const Login = (props) => {
 
   return (
     <Background>
-      <BlurView intensity={5} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <BlurView intensity={1} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <View style={{ alignItems: 'center', width: containerWidth }}>
           <Text
             style={{
@@ -41,12 +41,12 @@ const Login = (props) => {
               Login to your account
             </Text>
           <View
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.3)', 
-              height: height * 0.62, 
+             style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.7)', // Increased opacity for better contrast
+              height: height * 0.62,
               width: containerWidth,
               borderTopLeftRadius: borderRadius,
-              paddingTop: height * 0.1, 
+              paddingTop: height * 0.1,
               alignItems: 'center',
             }}>
             <Text style={{ fontSize: welcomeBackFontSize, color: darkGreen, fontWeight: 'bold' ,marginTop:-20 , marginBottom:30}}>
@@ -71,7 +71,7 @@ const Login = (props) => {
     btnLabel="Login"
     Press={() => {
       alert('Logged In');
-      props.navigation.navigate('Home');
+      props.navigation.navigate('HomePage');
     }}
   />
 </View>
