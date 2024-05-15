@@ -41,7 +41,7 @@ const Signup = (props) => {
           </Text>
           <View
             style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.7)',
               height: height * 0.7,
               width: containerWidth,
               borderTopLeftRadius: borderRadius,
@@ -78,7 +78,7 @@ const Signup = (props) => {
                 justifyContent: 'center',
                 width: '78%',
                 paddingRight: 16,
-                marginBottom: height * 0.01,
+                marginBottom: height * 0.03,
               }}>
               <Text style={{ color: 'black', fontSize: subHeaderFontSize , marginRight:3 , fontWeight: 'bold'}}>
                 and  

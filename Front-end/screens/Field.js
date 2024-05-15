@@ -18,10 +18,10 @@ const Field = props => {
         paddingHorizontal: paddingHorizontal,
         width: inputWidth, // Responsive width
         height: inputHeight, // Set height
-        backgroundColor: 'rgb(220,220, 220)',
+        backgroundColor: '#e3f2fd',
         marginVertical: 10
       }}
-      placeholderTextColor={darkGreen}
+      placeholderTextColor="#0a2463"
     />
   );
 };
